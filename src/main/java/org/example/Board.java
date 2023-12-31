@@ -7,13 +7,6 @@ public class Board {
         cells = new char[3][3];
     }
 
-    public boolean isEmptyCell(int x, int y) {
-        if (cells.length < x || cells[x].length < y) {
-            return false;
-        }
-        return cells[x][y] == '\u0000';
-    }
-
     public void place(int x, int y, char marker) {
         cells[x][y] = marker;
     }
@@ -33,14 +26,6 @@ public class Board {
         return true;
     }
 
-    public void clear() {
-        for (char[] row : cells) {
-            for (char cell : row) {
-                cell = '\u0000';
-            }
-        }
-    }
-
     public void print() {
         System.out.println("▁▁▁▁▁▁");
         for (char []row : cells) {
@@ -55,5 +40,4 @@ public class Board {
         }
         System.out.println("▔▔▔▔");
     }
-
 }

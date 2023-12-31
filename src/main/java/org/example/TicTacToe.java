@@ -15,6 +15,14 @@ public class TicTacToe {
         board = new Board();
     }
 
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
     public void start() {
         System.out.println("Welcome to Tic Tac Toe!");
         while(true) {
@@ -33,7 +41,7 @@ public class TicTacToe {
             }
             board.place(row, col, currentPlayer.getMarker());
 
-            if (hasWiner()) {
+            if (this.hasWinner()) {
                 System.out.println("Player " + currentPlayer.getMarker() + " wins!");
                 break;
             }
@@ -44,7 +52,6 @@ public class TicTacToe {
 
             switchCurrentPlayer();
         }
-
     }
 
     public void switchCurrentPlayer() {
@@ -55,7 +62,7 @@ public class TicTacToe {
         }
     }
 
-    public boolean hasWiner() {
+    public boolean hasWinner() {
         char topLeft = '\u0000';
         char topMiddle = '\u0000';
         char topRight = '\u0000';
